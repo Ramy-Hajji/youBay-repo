@@ -9,18 +9,13 @@ import javax.swing.JPanel;
 import javax.swing.JTable;
 import javax.swing.border.EmptyBorder;
 
-import org.jdesktop.beansbinding.AutoBinding.UpdateStrategy;
-import org.jdesktop.beansbinding.BeanProperty;
-import org.jdesktop.swingbinding.JTableBinding;
-import org.jdesktop.swingbinding.SwingBindings;
-
 import tn.youbay.delegates.DelegateProducts;
 import tn.youbay.entities.Product;
-
-import javax.swing.JButton;
-
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+import org.jdesktop.swingbinding.JTableBinding;
+import org.jdesktop.swingbinding.SwingBindings;
+import org.jdesktop.beansbinding.AutoBinding.UpdateStrategy;
+import org.jdesktop.beansbinding.BeanProperty;
+import tn.youbay.entities.PaymentWay;
 
 public class FindAllProductsByProviderId extends JFrame {
 
@@ -28,7 +23,7 @@ public class FindAllProductsByProviderId extends JFrame {
 	private JTable table;
 	List<Product> products;
 	private JTable table_1;
-	
+
 	static int idProduct;
 	static String nomProduct;
 	static String paymentWay;
@@ -43,7 +38,8 @@ public class FindAllProductsByProviderId extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					FindAllProductsByProviderId frame = new FindAllProductsByProviderId(1);
+					FindAllProductsByProviderId frame = new FindAllProductsByProviderId(
+							1);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -55,22 +51,21 @@ public class FindAllProductsByProviderId extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	/*public FindAllProductsByProviderId() {
-		getContentPane().setLayout(null);
-		DelegateProduct delegateProduct = new DelegateProduct();
-
-		products = new ArrayList<Product>();
-		products = delegateProduct.findAllProductsByProviderId(1);
-		System.out.println("les produit "+products.size());
-		// Integer.parseInt(table.getModel().getValueAt(selectedRow,
-		// 6).toString())
-		
-		table_1 = new JTable();
-		table_1.setBounds(58, 45, 306, 175);
-		getContentPane().add(table_1);
-		System.out.println("default");
-		
-	}*/
+	/*
+	 * public FindAllProductsByProviderId() { getContentPane().setLayout(null);
+	 * DelegateProduct delegateProduct = new DelegateProduct();
+	 * 
+	 * products = new ArrayList<Product>(); products =
+	 * delegateProduct.findAllProductsByProviderId(1);
+	 * System.out.println("les produit "+products.size()); //
+	 * Integer.parseInt(table.getModel().getValueAt(selectedRow, //
+	 * 6).toString())
+	 * 
+	 * table_1 = new JTable(); table_1.setBounds(58, 45, 306, 175);
+	 * getContentPane().add(table_1); System.out.println("default");
+	 * 
+	 * }
+	 */
 
 	public FindAllProductsByProviderId(Integer providerId) {
 		System.out.println("ahla");
@@ -78,7 +73,7 @@ public class FindAllProductsByProviderId extends JFrame {
 
 		products = new ArrayList<Product>();
 		products = delegateProduct.findAllProductsByProviderId(providerId);
-		System.out.println("les produit "+products.size());
+		System.out.println("les produit " + products.size());
 		// Integer.parseInt(table.getModel().getValueAt(selectedRow,6).toString())
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -87,7 +82,7 @@ public class FindAllProductsByProviderId extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		table_1 = new JTable();
 		table_1.setBounds(35, 34, 337, 159);
 		contentPane.add(table_1);
@@ -96,16 +91,16 @@ public class FindAllProductsByProviderId extends JFrame {
 	protected void initDataBindings() {
 		JTableBinding<Product, List<Product>, JTable> jTableBinding = SwingBindings.createJTableBinding(UpdateStrategy.READ, products, table_1);
 		//
-		BeanProperty<Product, Integer> productBeanProperty = BeanProperty.create("idProduct");
+		BeanProperty<Product, Integer> productBeanProperty = BeanProperty.create("id_product");
 		jTableBinding.addColumnBinding(productBeanProperty).setColumnName("New Column");
 		//
-		BeanProperty<Product, String> productBeanProperty_1 = BeanProperty.create("nom");
+		BeanProperty<Product, String> productBeanProperty_1 = BeanProperty.create("name");
 		jTableBinding.addColumnBinding(productBeanProperty_1).setColumnName("New Column");
 		//
-		BeanProperty<Product, String> productBeanProperty_2 = BeanProperty.create("paymentWay");
+		BeanProperty<Product, PaymentWay> productBeanProperty_2 = BeanProperty.create("payment_way");
 		jTableBinding.addColumnBinding(productBeanProperty_2).setColumnName("New Column");
 		//
-		BeanProperty<Product, Float> productBeanProperty_3 = BeanProperty.create("price");
+		BeanProperty<Product, Double> productBeanProperty_3 = BeanProperty.create("price");
 		jTableBinding.addColumnBinding(productBeanProperty_3).setColumnName("New Column");
 		//
 		BeanProperty<Product, Integer> productBeanProperty_4 = BeanProperty.create("quantity");

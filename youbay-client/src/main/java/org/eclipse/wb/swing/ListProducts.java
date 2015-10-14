@@ -32,7 +32,6 @@ public class ListProducts extends JFrame {
 
 	private JPanel contentPane;
 	List<Product> products;
-	private JTable table;
 	
 	static int idProduct;
 	static String nomProduct;
@@ -40,6 +39,7 @@ public class ListProducts extends JFrame {
 	static float price;
 	static int quantity;
 	static String state;
+	private JTable table;
 
 	/**
 	 * Launch the application.
@@ -74,10 +74,6 @@ public class ListProducts extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		table = new JTable();
-		table.setBounds(51, 21, 328, 164);
-		contentPane.add(table);
-		
 		JButton btnCreateDeal = new JButton("CREATE DEAL");
 		btnCreateDeal.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -96,21 +92,25 @@ public class ListProducts extends JFrame {
 		});
 		btnCreateDeal.setBounds(160, 213, 116, 23);
 		contentPane.add(btnCreateDeal);
+		
+		table = new JTable();
+		table.setBounds(52, 24, 304, 129);
+		contentPane.add(table);
 		initDataBindings();
 	}
 	protected void initDataBindings() {
 		JTableBinding<Product, List<Product>, JTable> jTableBinding = SwingBindings.createJTableBinding(UpdateStrategy.READ, products, table);
 		//
-		BeanProperty<Product, Integer> productBeanProperty = BeanProperty.create("idProduct");
-		jTableBinding.addColumnBinding(productBeanProperty).setColumnName("id Product");
+		BeanProperty<Product, Integer> productBeanProperty = BeanProperty.create("id_product");
+		jTableBinding.addColumnBinding(productBeanProperty).setColumnName("New Column");
 		//
-		BeanProperty<Product, String> productBeanProperty_1 = BeanProperty.create("nom");
+		BeanProperty<Product, String> productBeanProperty_1 = BeanProperty.create("name");
 		jTableBinding.addColumnBinding(productBeanProperty_1).setColumnName("New Column");
 		//
-		BeanProperty<Product, String> productBeanProperty_2 = BeanProperty.create("paymentWay");
+		BeanProperty<Product, PaymentWay> productBeanProperty_2 = BeanProperty.create("payment_way");
 		jTableBinding.addColumnBinding(productBeanProperty_2).setColumnName("New Column");
 		//
-		BeanProperty<Product, Float> productBeanProperty_3 = BeanProperty.create("price");
+		BeanProperty<Product, Double> productBeanProperty_3 = BeanProperty.create("price");
 		jTableBinding.addColumnBinding(productBeanProperty_3).setColumnName("New Column");
 		//
 		BeanProperty<Product, Integer> productBeanProperty_4 = BeanProperty.create("quantity");
@@ -118,6 +118,9 @@ public class ListProducts extends JFrame {
 		//
 		BeanProperty<Product, String> productBeanProperty_5 = BeanProperty.create("state");
 		jTableBinding.addColumnBinding(productBeanProperty_5).setColumnName("New Column");
+		//
+		BeanProperty<Product, String> productBeanProperty_6 = BeanProperty.create("provider.nom");
+		jTableBinding.addColumnBinding(productBeanProperty_6).setColumnName("New Column");
 		//
 		jTableBinding.bind();
 	}

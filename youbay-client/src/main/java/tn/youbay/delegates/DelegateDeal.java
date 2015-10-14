@@ -12,9 +12,9 @@ import tn.youbay.serviceLocator.ServiceLocator;
 
 public class DelegateDeal 
 {
-	static String jndi="/PidevEjb/ServiceDeal!edu.esprit.pidev.interfaces.IServiceDealRemote";
+	static String jndi="/youbay-ejb/ServiceDeal!tn.youbay.services.interfaces.IServiceDealRemote";
 	//mail
-	static String jndi2 ="/PidevEjb/EmailSender!edu.esprit.pidev.interfaces.IEmailSenderRemote";
+	static String jndi2 ="/youbay-ejb/EmailSender!tn.youbay.services.interfaces.IEmailSenderRemote";
 	 
 	 public static IServiceDealRemote GetInstance(){
 		return (IServiceDealRemote) ServiceLocator.getinstance().getProxy(jndi);

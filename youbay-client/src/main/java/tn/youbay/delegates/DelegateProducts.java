@@ -9,7 +9,7 @@ import tn.youbay.serviceLocator.ServiceLocator;
 
 public class DelegateProducts 
 {
-	static String jndi="/PidevEjb/ServiceProduct!edu.esprit.pidev.interfaces.IServiceProductRemote";
+	static String jndi="/youbay-ejb/ServiceProduct!tn.youbay.services.interfaces.IServiceProductRemote";
 	 
 	 public static IServiceProductRemote GetInstance(){
 		return (IServiceProductRemote) ServiceLocator.getinstance().getProxy(jndi);

@@ -75,10 +75,6 @@ public class ManageDealFrame extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		table = new JTable();
-		table.setBounds(20, 75, 622, 137);
-		contentPane.add(table);
-
 		JButton btnConsult = new JButton("Consult Successful Deals");
 		btnConsult.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -168,44 +164,33 @@ public class ManageDealFrame extends JFrame {
 		});
 		btnDisable.setBounds(123, 282, 89, 23);
 		contentPane.add(btnDisable);
+		
+		table = new JTable();
+		table.setBounds(23, 39, 594, 190);
+		contentPane.add(table);
 		initDataBindings();
 	}
-
 	protected void initDataBindings() {
-		JTableBinding<Deal, List<Deal>, JTable> jTableBinding = SwingBindings
-				.createJTableBinding(UpdateStrategy.READ, listeDeals, table);
+		JTableBinding<Deal, List<Deal>, JTable> jTableBinding = SwingBindings.createJTableBinding(UpdateStrategy.READ, listeDeals, table);
 		//
-		BeanProperty<Deal, Integer> dealBeanProperty = BeanProperty
-				.create("idDeal");
-		jTableBinding.addColumnBinding(dealBeanProperty).setColumnName(
-				"id Deal");
+		BeanProperty<Deal, Integer> dealBeanProperty = BeanProperty.create("idDeal");
+		jTableBinding.addColumnBinding(dealBeanProperty).setColumnName("New Column");
 		//
-		BeanProperty<Deal, Date> dealBeanProperty_1 = BeanProperty
-				.create("startingDate");
-		jTableBinding.addColumnBinding(dealBeanProperty_1).setColumnName(
-				"Starting Date");
+		BeanProperty<Deal, Date> dealBeanProperty_1 = BeanProperty.create("startingDate");
+		jTableBinding.addColumnBinding(dealBeanProperty_1).setColumnName("New Column");
 		//
-		BeanProperty<Deal, Date> dealBeanProperty_2 = BeanProperty
-				.create("deadline");
-		jTableBinding.addColumnBinding(dealBeanProperty_2).setColumnName(
-				"deadline");
+		BeanProperty<Deal, Date> dealBeanProperty_2 = BeanProperty.create("deadline");
+		jTableBinding.addColumnBinding(dealBeanProperty_2).setColumnName("New Column");
 		//
-		BeanProperty<Deal, Float> dealBeanProperty_3 = BeanProperty
-				.create("discount");
-		jTableBinding.addColumnBinding(dealBeanProperty_3).setColumnName(
-				"discount");
+		BeanProperty<Deal, Float> dealBeanProperty_3 = BeanProperty.create("discount");
+		jTableBinding.addColumnBinding(dealBeanProperty_3).setColumnName("New Column");
 		//
-		BeanProperty<Deal, TypeDeal> dealBeanProperty_4 = BeanProperty
-				.create("type");
-		jTableBinding.addColumnBinding(dealBeanProperty_4)
-				.setColumnName("type");
+		BeanProperty<Deal, TypeDeal> dealBeanProperty_4 = BeanProperty.create("type");
+		jTableBinding.addColumnBinding(dealBeanProperty_4).setColumnName("New Column");
 		//
-		BeanProperty<Deal, String> dealBeanProperty_5 = BeanProperty
-				.create("product.nom");
-		jTableBinding.addColumnBinding(dealBeanProperty_5).setColumnName(
-				"produit");
+		BeanProperty<Deal, String> dealBeanProperty_5 = BeanProperty.create("product.name");
+		jTableBinding.addColumnBinding(dealBeanProperty_5).setColumnName("New Column");
 		//
-		jTableBinding.setEditable(false);
 		jTableBinding.bind();
 	}
 }

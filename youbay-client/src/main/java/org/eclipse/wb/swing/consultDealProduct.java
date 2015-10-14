@@ -64,16 +64,15 @@ public class consultDealProduct extends JFrame {
 		table.setBounds(197, 177, -110, -127);
 		contentPane.add(table);
 		
-		table_1 = new JTable();
-		table_1.setBounds(52, 25, 326, 163);
-		contentPane.add(table_1);
-		
 		JButton btnParticiperAuDeal = new JButton("Participer au deal");
 		btnParticiperAuDeal.setBounds(165, 215, 149, 23);
 		contentPane.add(btnParticiperAuDeal);
+		
+		table_1 = new JTable();
+		table_1.setBounds(43, 33, 309, 133);
+		contentPane.add(table_1);
 		initDataBindings();
 	}
-
 	protected void initDataBindings() {
 		JTableBinding<Deal, List<Deal>, JTable> jTableBinding = SwingBindings.createJTableBinding(UpdateStrategy.READ, listeDeals, table_1);
 		//
@@ -92,7 +91,7 @@ public class consultDealProduct extends JFrame {
 		BeanProperty<Deal, TypeDeal> dealBeanProperty_4 = BeanProperty.create("type");
 		jTableBinding.addColumnBinding(dealBeanProperty_4).setColumnName("New Column");
 		//
-		BeanProperty<Deal, String> dealBeanProperty_5 = BeanProperty.create("product.nom");
+		BeanProperty<Deal, String> dealBeanProperty_5 = BeanProperty.create("product.name");
 		jTableBinding.addColumnBinding(dealBeanProperty_5).setColumnName("New Column");
 		//
 		jTableBinding.bind();
