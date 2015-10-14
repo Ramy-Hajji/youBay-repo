@@ -14,16 +14,13 @@ import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
-import edu.esprit.pidev.Deal;
-import edu.esprit.pidev.Provider;
-
 @Entity
-public class Product implements Serializable{
-	
+public class Product implements Serializable {
+
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int Id_Product;
 	private double price;
 	private String brand;
@@ -33,116 +30,142 @@ public class Product implements Serializable{
 	private String description;
 	private String name;
 	@Enumerated
-	private PaymentWay payment_way; 
-	
+	private PaymentWay payment_way;
+
 	@ManyToOne
-	@JoinColumn(name="account")
+	@JoinColumn(name = "account")
 	private Account account;
-	
+
 	@ManyToOne
-	@JoinColumn(name="subCategory")
+	@JoinColumn(name = "subCategory")
 	private SubCategory subCategory;
-	
+
 	@ManyToOne
-	@JoinColumn(name="category")
+	@JoinColumn(name = "category")
 	private Category category;
-	
+
 	@OneToMany(mappedBy = "product")
 	private List<Deal> deals;
 
 	@ManyToOne(cascade = CascadeType.MERGE)
 	private Provider provider;
-	
+
 	public int getId_product() {
 		return Id_Product;
 	}
+
 	public void setId_product(int id_product) {
 		this.Id_Product = id_product;
 	}
+
 	public double getPrice() {
 		return price;
 	}
+
 	public void setPrice(double price) {
 		this.price = price;
 	}
+
 	public String getBrand() {
 		return brand;
 	}
+
 	public void setBrand(String brand) {
 		this.brand = brand;
 	}
+
 	public int getQuantity() {
 		return quantity;
 	}
+
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
+
 	public String getState() {
 		return state;
 	}
+
 	public void setState(String state) {
 		this.state = state;
 	}
+
 	@Lob
 	public byte[] getPicture() {
 		return picture;
 	}
+
 	public void setPicture(byte[] picture) {
 		this.picture = picture;
 	}
+
 	public String getDescription() {
 		return description;
 	}
+
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
+
 	public SubCategory getSubCategory() {
 		return subCategory;
 	}
+
 	public void setSubCategory(SubCategory subCategory) {
 		this.subCategory = subCategory;
 	}
+
 	public Account getAccount() {
 		return account;
 	}
+
 	public void setAccount(Account account) {
 		this.account = account;
 	}
+
 	public Category getCategory() {
 		return category;
 	}
+
 	public void setCategory(Category category) {
 		this.category = category;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public PaymentWay getPayment_way() {
 		return payment_way;
 	}
+
 	public void setPayment_way(PaymentWay payment_way) {
 		this.payment_way = payment_way;
 	}
-	
 
 	public List<Deal> getDeals() {
 		return deals;
 	}
+
 	public void setDeals(List<Deal> deals) {
 		this.deals = deals;
 	}
+
 	public Provider getProvider() {
 		return provider;
 	}
+
 	public void setProvider(Provider provider) {
 		this.provider = provider;
 	}
-	public Product(int id_Product, String nom, PaymentWay payment_way,String brand, double price,
-			int quantite, String state,String description) {
+
+	public Product(int id_Product, String nom, PaymentWay payment_way,
+			String brand, double price, int quantite, String state,
+			String description) {
 		super();
 		this.Id_Product = id_Product;
 		this.name = nom;
@@ -151,29 +174,27 @@ public class Product implements Serializable{
 		this.quantity = quantite;
 		this.payment_way = payment_way;
 		this.state = state;
-		this.description=description;
+		this.description = description;
 	}
-		public Product(int id_Product,String nom,String brand,PaymentWay payment_way,double price,
-				 String state,int quantite,String description) {
-			super();
-			this.Id_Product = id_Product;
 
-			this.Id_Product = id_Product;
-			this.name = nom;
-			this.brand = brand;
-			this.price = price;
-			this.quantity = quantite;
-			this.payment_way = payment_way;
-			this.state = state;
-			this.description=description;
-		}
-		public Product() {
-			super();
-		}
-	
-	
-	
-	
-	
+	public Product(int id_Product, String nom, String brand,
+			PaymentWay payment_way, double price, String state, int quantite,
+			String description) {
+		super();
+		this.Id_Product = id_Product;
+
+		this.Id_Product = id_Product;
+		this.name = nom;
+		this.brand = brand;
+		this.price = price;
+		this.quantity = quantite;
+		this.payment_way = payment_way;
+		this.state = state;
+		this.description = description;
+	}
+
+	public Product() {
+		super();
+	}
 
 }
