@@ -8,7 +8,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-import tn.youbay.entities.Accounts;
+import tn.youbay.entities.Account;
 import tn.youbay.entities.Claims;
 
 @Stateless

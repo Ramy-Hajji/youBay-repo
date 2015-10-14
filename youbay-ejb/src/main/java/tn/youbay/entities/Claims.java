@@ -23,10 +23,10 @@ public class Claims implements Serializable{
 	int id;
 	String content;
 //	int idClient;
-	@ManyToOne(targetEntity=Accounts.class,fetch=FetchType.EAGER)
+	@ManyToOne(targetEntity=Account.class,fetch=FetchType.EAGER)
 	@JoinColumn(insertable=false,updatable=false,name="account")
 
-	Accounts account;
+	Account account;
 	public String getContent() {
 		return content;
 	}
@@ -61,10 +61,10 @@ public class Claims implements Serializable{
 //		this.idClient = idClient;
 	
 	}
-	public Accounts getAccount() {
+	public Account getAccount() {
 		return account;
 	}
-	public void setAccount(Accounts account) {
+	public void setAccount(Account account) {
 		this.account = account;
 	}
 	@Override

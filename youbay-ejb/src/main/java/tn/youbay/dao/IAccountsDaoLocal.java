@@ -6,9 +6,9 @@ import java.util.List;
 
 import javax.ejb.Local;
 
-import tn.youbay.entities.Accounts;
+import tn.youbay.entities.Account;
 @Local
 public interface IAccountsDaoLocal {
-	public  Accounts  getAccountByNameSEC(String name,String secret);
-	public void ajouter(Accounts a );
+	public  Account  getAccountByNameSEC(String name,String secret);
+	public void ajouter(Account a );
 }

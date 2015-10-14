@@ -1,6 +1,6 @@
 package tn.youbay.delegates;
 
-import tn.youbay.entities.Accounts;
+import tn.youbay.entities.Account;
 import tn.youbay.serviceLocator.ServiceLocator;
 import tn.youbay.services.interfaces.IAccountsService;
 
@@ -13,24 +13,24 @@ public class GestionAccountsDelegate {
 
 	}
 
-	public void ajouterCompte(Accounts a) {
+	public void ajouterCompte(Account a) {
 		getInstance().ajoutAccount(a);
 	}
 	
-	public void supprimerCompte(Accounts a)
+	public void supprimerCompte(Account a)
 	{
 		getInstance().supprimerAccount(a);
 	}
-	public void updateCompte(Accounts a)
+	public void updateCompte(Account a)
 	{
 		getInstance().updateAccount(a);
 	}
 	
-	public Accounts getUNADMIIN(String username , String secret)
+	public Account getUNADMIIN(String username , String secret)
 	{
 		return getInstance().getUnAdmin(username, secret);
 	}
-	public Accounts getCliientbyID(int id)
+	public Account getCliientbyID(int id)
 	{
 		return getInstance().getClientbyID(id);
 	}
