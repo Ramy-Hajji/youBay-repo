@@ -6,7 +6,7 @@ import java.util.List;
 import tn.youbay.entities.Category;
 import tn.youbay.entities.SubCategory;
 import tn.youbay.serviceLocator.ServiceLocator;
-import tn.youbay.services.ISubCategoryServiceRemote;
+import tn.youbay.services.interfaces.ISubCategoryServiceRemote;
 
 
 public class SubCategoryDelegate {

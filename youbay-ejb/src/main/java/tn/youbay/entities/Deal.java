@@ -32,6 +32,7 @@ public class Deal implements Serializable {
 	private int noteClient;
 
 	private List<ClientD> clients;
+
 	private Product product;
 
 	public Deal() {
@@ -57,7 +58,7 @@ public class Deal implements Serializable {
 		this.deadline = deadline;
 		this.discount = discount;
 	}
-	
+
 	public Deal(int idDeal, Date startingDate, Date deadline, float discount) {
 		super();
 		this.idDeal = idDeal;
@@ -134,7 +135,7 @@ public class Deal implements Serializable {
 		this.noteClient = noteClient;
 	}
 
-	@ManyToOne(cascade=CascadeType.MERGE)
+	@ManyToOne(cascade = CascadeType.MERGE)
 	public Product getProduct() {
 		return product;
 	}
