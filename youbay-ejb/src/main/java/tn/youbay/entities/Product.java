@@ -1,7 +1,9 @@
 package tn.youbay.entities;
 
 import java.io.Serializable;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
@@ -10,6 +12,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
+import edu.esprit.pidev.Deal;
+import edu.esprit.pidev.Provider;
 
 @Entity
 public class Product implements Serializable{
@@ -41,6 +47,11 @@ public class Product implements Serializable{
 	@JoinColumn(name="category")
 	private Category category;
 	
+	@OneToMany(mappedBy = "product")
+	private List<Deal> deals;
+
+	@ManyToOne(cascade = CascadeType.MERGE)
+	private Provider provider;
 	
 	public int getId_product() {
 		return Id_Product;
@@ -117,6 +128,19 @@ public class Product implements Serializable{
 		this.payment_way = payment_way;
 	}
 	
+
+	public List<Deal> getDeals() {
+		return deals;
+	}
+	public void setDeals(List<Deal> deals) {
+		this.deals = deals;
+	}
+	public Provider getProvider() {
+		return provider;
+	}
+	public void setProvider(Provider provider) {
+		this.provider = provider;
+	}
 	public Product(int id_Product, String nom, PaymentWay payment_way,String brand, double price,
 			int quantite, String state,String description) {
 		super();
