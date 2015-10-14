@@ -2,7 +2,7 @@ package tn.youbay.delegates;
 
 import tn.youbay.entities.Accounts;
 import tn.youbay.serviceLocator.ServiceLocator;
-import tn.youbay.services.IAccountsService;
+import tn.youbay.services.interfaces.IAccountsService;
 
 
 public class GestionAccountsDelegate {

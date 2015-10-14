@@ -1,4 +1,4 @@
-package tn.youbay.services;
+package tn.youbay.services.interfaces;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package tn.youbay.services;
+package tn.youbay.services.impl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +21,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import tn.youbay.entities.Category;
+import tn.youbay.services.interfaces.ICategoryServiceRemote;
 
 
 @Stateless

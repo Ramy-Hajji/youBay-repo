@@ -1,4 +1,4 @@
-package tn.youbay.services;
+package tn.youbay.services.impl;
 
 import java.util.List;
 
@@ -10,6 +10,7 @@ import javax.persistence.Query;
 import tn.youbay.entities.Category;
 import tn.youbay.entities.Product;
 import tn.youbay.entities.SubCategory;
+import tn.youbay.services.interfaces.IProductServiceRemote;
 
 @Stateless
 public class ProductService implements IProductServiceRemote{

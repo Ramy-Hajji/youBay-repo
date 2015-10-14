@@ -1,4 +1,4 @@
-package tn.youbay.services;
+package tn.youbay.services.impl;
 
 import java.util.List;
 
@@ -7,6 +7,7 @@ import javax.ejb.Stateless;
 
 import tn.youbay.dao.ClaimsDao;
 import tn.youbay.entities.Claims;
+import tn.youbay.services.interfaces.IClaimService;
 
 @Stateless
 public class ClaimService implements IClaimService{

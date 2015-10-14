@@ -15,10 +15,11 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 
-import tn.youbay.services.IEmailSenderRemote;
+import tn.youbay.services.interfaces.IEmailSenderRemote;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
 import javax.swing.ImageIcon;
 
 public class MailSendForm extends JFrame {

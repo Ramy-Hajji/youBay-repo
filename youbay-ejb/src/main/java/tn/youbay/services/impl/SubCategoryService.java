@@ -1,4 +1,4 @@
-package tn.youbay.services;
+package tn.youbay.services.impl;
 
 import java.util.List;
 
@@ -9,13 +9,14 @@ import javax.persistence.Query;
 
 import tn.youbay.entities.Category;
 import tn.youbay.entities.SubCategory;
+import tn.youbay.services.interfaces.ISubCategoryServiceRemote;
 
 @Stateless
 public class SubCategoryService implements ISubCategoryServiceRemote {
 
-	@PersistenceContext(name="youbay")
+	@PersistenceContext(name = "youbay")
 	EntityManager em;
-	
+
 	@Override
 	public Boolean addSubCategory(SubCategory s) {
 		try {
@@ -24,25 +25,24 @@ public class SubCategoryService implements ISubCategoryServiceRemote {
 		} catch (Exception e) {
 			return false;
 		}
-		
-		
+
 	}
 
 	@Override
 	public Boolean updateSubCategory(SubCategory s) {
-		
+
 		try {
 			em.merge(s);
 			return true;
 		} catch (Exception e) {
 			return false;
 		}
-		
+
 	}
 
 	@Override
 	public Boolean deleteSubCategory(SubCategory s) {
-		
+
 		try {
 			em.remove(em.merge(s));
 			return true;
@@ -53,13 +53,13 @@ public class SubCategoryService implements ISubCategoryServiceRemote {
 
 	@Override
 	public SubCategory findSubCategoryById(int SubCategoryId) {
-		SubCategory sb = null; 
-				try {
-					sb=em.find(SubCategory.class, SubCategoryId);
-				} catch (Exception e) {
-					// TODO: handle exception
-				}
-				
+		SubCategory sb = null;
+		try {
+			sb = em.find(SubCategory.class, SubCategoryId);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
 		return sb;
 	}
 
@@ -73,7 +73,8 @@ public class SubCategoryService implements ISubCategoryServiceRemote {
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<SubCategory> findSubCategoriesByCategory(Category category) {
-		Query query = em.createQuery("select s from SubCategory s where s.category=:cat" );
+		Query query = em
+				.createQuery("select s from SubCategory s where s.category=:cat");
 		query.setParameter("cat", category);
 		return query.getResultList();
 	}

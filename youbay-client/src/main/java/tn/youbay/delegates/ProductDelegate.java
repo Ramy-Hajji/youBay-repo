@@ -6,7 +6,7 @@ import tn.youbay.entities.Category;
 import tn.youbay.entities.Product;
 import tn.youbay.entities.SubCategory;
 import tn.youbay.serviceLocator.ServiceLocator;
-import tn.youbay.services.IProductServiceRemote;
+import tn.youbay.services.interfaces.IProductServiceRemote;
 
 
 public class ProductDelegate {

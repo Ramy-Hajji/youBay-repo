@@ -1,4 +1,4 @@
-package tn.youbay.services;
+package tn.youbay.services.impl;
 
 import java.util.List;
 
@@ -7,6 +7,7 @@ import javax.ejb.Stateless;
 
 import tn.youbay.dao.ManageProductDomain;
 import tn.youbay.entities.Product;
+import tn.youbay.services.interfaces.IServiceProduit;
 
 @Stateless
 public class ServiceProduit implements IServiceProduit{

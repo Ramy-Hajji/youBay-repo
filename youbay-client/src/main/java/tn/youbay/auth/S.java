@@ -18,8 +18,8 @@ import tn.youbay.delegates.GestionAccountsDelegate;
 import tn.youbay.delegates.GestionClaimsDelegate;
 import tn.youbay.entities.Accounts;
 import tn.youbay.entities.Claims;
-import tn.youbay.services.IAccountsService;
-import tn.youbay.services.IClaimService;
+import tn.youbay.services.interfaces.IAccountsService;
+import tn.youbay.services.interfaces.IClaimService;
 
 import org.jdesktop.swingbinding.JTableBinding;
 import org.jdesktop.swingbinding.SwingBindings;

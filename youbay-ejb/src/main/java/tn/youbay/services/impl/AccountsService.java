@@ -1,4 +1,4 @@
-package tn.youbay.services;
+package tn.youbay.services.impl;
 
 import java.io.Serializable;
 
@@ -8,6 +8,7 @@ import javax.ejb.Stateless;
 
 import tn.youbay.dao.AccountsDao;
 import tn.youbay.entities.Accounts;
+import tn.youbay.services.interfaces.IAccountsService;
 
 @Stateless
 public class AccountsService implements IAccountsService,Serializable{

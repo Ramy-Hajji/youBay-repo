@@ -11,7 +11,7 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-import tn.youbay.services.IEmailSenderRemote;
+import tn.youbay.services.interfaces.IEmailSenderRemote;
 @Stateful
 public class EmailSender implements IEmailSenderRemote{
 	   public  boolean SendMail(String from ,String password,String Subject ,String message,String to[])

@@ -5,8 +5,8 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
 import tn.youbay.entities.Claims;
-import tn.youbay.services.IAccountsService;
-import tn.youbay.services.IClaimService;
+import tn.youbay.services.interfaces.IAccountsService;
+import tn.youbay.services.interfaces.IClaimService;
 
 public class testClaims {
 public static void main(String[] args) {

@@ -4,7 +4,7 @@ import java.util.List;
 
 import tn.youbay.entities.Product;
 import tn.youbay.serviceLocator.ServiceLocator;
-import tn.youbay.services.IServiceProduit;
+import tn.youbay.services.interfaces.IServiceProduit;
 
 
 public class DelegateProduct {

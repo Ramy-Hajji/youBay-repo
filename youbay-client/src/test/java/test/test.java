@@ -8,8 +8,8 @@ import javax.naming.NamingException;
 import tn.youbay.dao.IAccountsDaoLocal;
 import tn.youbay.dao.IAccountsRemote;
 import tn.youbay.entities.Accounts;
-import tn.youbay.services.IAccountsService;
-import tn.youbay.services.IEmailSenderRemote;
+import tn.youbay.services.interfaces.IAccountsService;
+import tn.youbay.services.interfaces.IEmailSenderRemote;
 
 
 public class test {

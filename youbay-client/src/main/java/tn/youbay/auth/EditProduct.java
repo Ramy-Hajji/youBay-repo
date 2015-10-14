@@ -18,7 +18,8 @@ import javax.swing.border.EmptyBorder;
 import tn.youbay.delegates.DelegateProduct;
 import tn.youbay.entities.PaymentWay;
 import tn.youbay.entities.Product;
-import tn.youbay.services.IServiceProduit;
+import tn.youbay.services.interfaces.IServiceProduit;
+
 import javax.swing.JComboBox;
 
 public class EditProduct extends JFrame {

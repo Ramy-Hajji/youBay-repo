@@ -4,7 +4,7 @@ import java.util.List;
 
 import tn.youbay.entities.Category;
 import tn.youbay.serviceLocator.ServiceLocator;
-import tn.youbay.services.ICategoryServiceRemote;
+import tn.youbay.services.interfaces.ICategoryServiceRemote;
 
 
 

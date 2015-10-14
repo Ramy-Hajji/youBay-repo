@@ -9,7 +9,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 
-import tn.youbay.services.IEmailSenderRemote;
+import tn.youbay.services.interfaces.IEmailSenderRemote;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;

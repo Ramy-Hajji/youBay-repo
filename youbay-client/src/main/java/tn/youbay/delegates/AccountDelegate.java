@@ -4,7 +4,7 @@ import java.util.List;
 
 import tn.youbay.entities.Accounts;
 import tn.youbay.serviceLocator.ServiceLocator;
-import tn.youbay.services.IAccountServiceRemote;
+import tn.youbay.services.interfaces.IAccountServiceRemote;
 
 
 public class AccountDelegate {

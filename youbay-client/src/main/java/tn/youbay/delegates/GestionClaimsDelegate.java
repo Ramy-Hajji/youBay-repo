@@ -4,7 +4,7 @@ import java.util.List;
 
 import tn.youbay.entities.Claims;
 import tn.youbay.serviceLocator.ServiceLocator;
-import tn.youbay.services.IClaimService;
+import tn.youbay.services.interfaces.IClaimService;
 
 public class GestionClaimsDelegate {
 	static String jndi = "/youbay-ejb/ClaimService!tn.youbay.services.IClaimService";
