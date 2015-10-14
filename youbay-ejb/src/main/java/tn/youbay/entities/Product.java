@@ -37,7 +37,7 @@ public class Product implements Serializable{
 	
 	@ManyToOne
 	@JoinColumn(name="account")
-	private Accounts account;
+	private Account account;
 	
 	@ManyToOne
 	@JoinColumn(name="subCategory")
@@ -103,10 +103,10 @@ public class Product implements Serializable{
 	public void setSubCategory(SubCategory subCategory) {
 		this.subCategory = subCategory;
 	}
-	public Accounts getAccount() {
+	public Account getAccount() {
 		return account;
 	}
-	public void setAccount(Accounts account) {
+	public void setAccount(Account account) {
 		this.account = account;
 	}
 	public Category getCategory() {

@@ -9,14 +9,14 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-import tn.youbay.entities.Accounts;
+import tn.youbay.entities.Account;
 
 @Stateless
 @LocalBean
 public class AccountsDao {
 	@PersistenceContext(unitName="ejb-sample")
 	EntityManager em;
-	public void supprimerAccounts(Accounts a)
+	public void supprimerAccounts(Account a)
 	{
 		try{
 			em.remove(em.merge(a));
@@ -26,16 +26,16 @@ public class AccountsDao {
 			System.out.println("laaaa");
 		}	
 		}
-	public void ajouterAccounts(Accounts a )
+	public void ajouterAccounts(Account a )
 	{
 		em.persist(a);
 	}
 	
-	public void updateAccounts(Accounts a)
+	public void updateAccounts(Account a)
 	{
 		em.merge(a);
 	}
-	public Accounts getAccountByNameSEC(String name,String secret)
+	public Account getAccountByNameSEC(String name,String secret)
 		{
 
 Query q = em.createQuery("select e from Accounts e WHERE e.username=:name AND e.secret_number=:secret");
@@ -43,28 +43,28 @@ q.setParameter("name", name);
 q.setParameter("secret", secret);
 
 
-return (Accounts) q.getSingleResult();
+return (Account) q.getSingleResult();
 	
 	}
-	public Accounts getAccountById(int Id)
+	public Account getAccountById(int Id)
 	{
 
 Query q = em.createQuery("select e from Accounts e WHERE e.Id=:Id");
 q.setParameter("Id", Id);
 
 
-return (Accounts) q.getSingleResult();
+return (Account) q.getSingleResult();
 
 }
 	
-	public Accounts getAccountByUsername(String username)
+	public Account getAccountByUsername(String username)
 	{
 
 Query q = em.createQuery("select e from Accounts e WHERE e.username=:Id");
 q.setParameter("Id", username);
 
 
-return (Accounts) q.getSingleResult();
+return (Account) q.getSingleResult();
 
 }
 

@@ -126,6 +126,7 @@ public class EditProducts extends JPanel {
 		JButton button_1 = new JButton("Edit");
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
 				DelegateProduct d = new DelegateProduct();
 				ListProductFrame l1 = new ListProductFrame();
 				

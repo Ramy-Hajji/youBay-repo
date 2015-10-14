@@ -9,7 +9,7 @@ import org.junit.Test;
 
 import tn.youbay.delegates.GestionAccountsDelegate;
 import tn.youbay.delegates.GestionClaimsDelegate;
-import tn.youbay.entities.Accounts;
+import tn.youbay.entities.Account;
 import tn.youbay.entities.Claims;
 
 public class testAccounts {
@@ -27,7 +27,7 @@ public class testAccounts {
 		
 		GestionAccountsDelegate gdl = new GestionAccountsDelegate();
 		GestionClaimsDelegate gdc = new GestionClaimsDelegate();
-		Accounts a = new Accounts();
+		Account a = new Account();
 		a.setUsername("oussff1");
 		a.setSecret_number("123");
 		//gdl.ajouterCompte(a);

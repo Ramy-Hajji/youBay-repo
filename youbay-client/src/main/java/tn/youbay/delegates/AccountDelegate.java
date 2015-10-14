@@ -2,7 +2,7 @@ package tn.youbay.delegates;
 
 import java.util.List;
 
-import tn.youbay.entities.Accounts;
+import tn.youbay.entities.Account;
 import tn.youbay.serviceLocator.ServiceLocator;
 import tn.youbay.services.interfaces.IAccountServiceRemote;
 
@@ -16,7 +16,7 @@ private static final String jndi = "/youbay-ejb/AccountService!tn.youbay.service
 		return (IAccountServiceRemote) ServiceLocator.getinstance().getProxy(jndi);
 	}
 	
-	public static List<Accounts> dofindAllAccounts() {
+	public static List<Account> dofindAllAccounts() {
 		return getProxy().findAllAccounts();
 	}
 }

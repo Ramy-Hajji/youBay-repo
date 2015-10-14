@@ -7,7 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-import tn.youbay.entities.Accounts;
+import tn.youbay.entities.Account;
 import tn.youbay.services.interfaces.IAccountServiceRemote;
 
 @Stateless
@@ -17,7 +17,7 @@ public class AccountService implements IAccountServiceRemote {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Accounts> findAllAccounts() {
+	public List<Account> findAllAccounts() {
 		Query query = em.createQuery("select a from Accounts a");
 		return query.getResultList();
 	}

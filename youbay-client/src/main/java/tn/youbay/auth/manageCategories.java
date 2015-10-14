@@ -75,7 +75,7 @@ import tn.youbay.delegates.AccountDelegate;
 import tn.youbay.delegates.CategoryDelegate;
 import tn.youbay.delegates.ProductDelegate;
 import tn.youbay.delegates.SubCategoryDelegate;
-import tn.youbay.entities.Accounts;
+import tn.youbay.entities.Account;
 import tn.youbay.entities.Category;
 import tn.youbay.entities.Product;
 import tn.youbay.entities.SubCategory;
@@ -98,7 +98,7 @@ public class manageCategories extends JPanel {
 	private JLabel warn;
 	JScrollPane scrollPane;
 	JPanel panel;
-	static List<Accounts> accounts = new ArrayList<>();
+	static List<Account> accounts = new ArrayList<>();
 	List<Product> products;
 
 	/**

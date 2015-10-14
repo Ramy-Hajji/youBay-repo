@@ -7,7 +7,7 @@ import javax.naming.NamingException;
 
 import tn.youbay.dao.IAccountsDaoLocal;
 import tn.youbay.dao.IAccountsRemote;
-import tn.youbay.entities.Accounts;
+import tn.youbay.entities.Account;
 import tn.youbay.services.interfaces.IAccountsService;
 import tn.youbay.services.interfaces.IEmailSenderRemote;
 

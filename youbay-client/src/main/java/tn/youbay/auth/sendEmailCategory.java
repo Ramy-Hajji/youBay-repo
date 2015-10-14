@@ -31,7 +31,7 @@ import javax.swing.JButton;
 import javax.swing.JTextArea;
 
 import tn.youbay.delegates.CategoryDelegate;
-import tn.youbay.entities.Accounts;
+import tn.youbay.entities.Account;
 import tn.youbay.entities.Category;
 
 import java.awt.event.MouseAdapter;
@@ -44,7 +44,7 @@ public class sendEmailCategory extends JFrame {
 	private JPanel contentPane;
 	private JTextField nameAccount;
 	JTextArea subject = new JTextArea();
-	List<Accounts> accounts;
+	List<Account> accounts;
 	List<Category> listeCat;
 	List<String> listeSugg=new ArrayList();
 	JList listCat;

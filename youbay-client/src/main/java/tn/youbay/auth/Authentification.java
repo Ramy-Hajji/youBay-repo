@@ -22,7 +22,7 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 
 import tn.youbay.delegates.GestionAccountsDelegate;
-import tn.youbay.entities.Accounts;
+import tn.youbay.entities.Account;
 import tn.youbay.services.interfaces.IAccountsService;
 
 import java.awt.event.ActionListener;
@@ -35,7 +35,7 @@ public class Authentification extends JFrame {
 	private JPanel contentPane;
 	private JTextField UsernameField;
 	private JButton btnLogin;
-	public static Accounts ac;
+	public static Account ac;
 	private JPasswordField PasswordField;
 
 	/**

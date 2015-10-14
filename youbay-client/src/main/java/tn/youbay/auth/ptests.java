@@ -11,7 +11,7 @@ import javax.swing.JTable;
 
 import tn.youbay.delegates.GestionAccountsDelegate;
 import tn.youbay.delegates.GestionClaimsDelegate;
-import tn.youbay.entities.Accounts;
+import tn.youbay.entities.Account;
 import tn.youbay.entities.Claims;
 import tn.youbay.services.interfaces.IAccountsService;
 import tn.youbay.services.interfaces.IClaimService;
@@ -41,7 +41,7 @@ import java.awt.event.KeyEvent;
 public class ptests extends JPanel {
 	List<Claims> clll;
 	Claims one;
-	static Accounts aco;
+	static Account aco;
 	private JTable table;
 	private JTextField usern;
 	GestionClaimsDelegate gdc = new GestionClaimsDelegate();

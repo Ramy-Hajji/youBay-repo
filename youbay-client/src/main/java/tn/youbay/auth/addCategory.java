@@ -35,7 +35,7 @@ import javax.swing.JButton;
 
 import tn.youbay.delegates.AccountDelegate;
 import tn.youbay.delegates.CategoryDelegate;
-import tn.youbay.entities.Accounts;
+import tn.youbay.entities.Account;
 import tn.youbay.entities.Category;
 
 import java.awt.event.ActionListener;
@@ -47,7 +47,7 @@ import java.util.Properties;
 public class addCategory extends JPanel {
 	private JTextField nameCategory;
 	List<Category> categories;
-	List<Accounts> accounts;
+	List<Account> accounts;
 	Category category;
 
 	/**
