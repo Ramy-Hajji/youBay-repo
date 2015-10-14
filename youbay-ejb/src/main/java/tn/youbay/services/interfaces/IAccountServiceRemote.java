@@ -4,12 +4,12 @@ import java.util.List;
 
 import javax.ejb.Remote;
 
-import tn.youbay.entities.Accounts;
+import tn.youbay.entities.Account;
 
 
 @Remote
 public interface IAccountServiceRemote {
 	
-	public List<Accounts> findAllAccounts();
+	public List<Account> findAllAccounts();
 	
 }

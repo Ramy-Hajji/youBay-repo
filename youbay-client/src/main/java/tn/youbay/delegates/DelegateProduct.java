@@ -8,7 +8,7 @@ import tn.youbay.services.interfaces.IServiceProduit;
 
 
 public class DelegateProduct {
-	static String jndi="/youbay-ejb/ServiceProduit!tn.youbay.services.IServiceProduit";
+	static String jndi="/youbay-ejb/ServiceProduit!tn.youbay.services.interfaces.IServiceProduit";
 	 
 	 public static IServiceProduit GetInstance(){
 		return (IServiceProduit) ServiceLocator.getinstance().getProxy(jndi);
