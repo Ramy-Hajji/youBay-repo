@@ -80,9 +80,9 @@ public class DelegateDeal
 		
 	}
 	 
-	 public void mail()
+	 public void mail(String[] to)
 	 {
-		 String[] to ={"nadine.makni92@gmail.com"};
+		 
 		 getinstance2().SendMail("oussama.rekik@esprit.tn", "tigran1993", "Secret Code" , "ajoute moi des deals de ce type", to);
 	 }
 

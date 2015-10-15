@@ -18,7 +18,9 @@ public class Provider implements Serializable {
 
 	private Integer id;
 	private String nom;
+	private String email;
 	private List<Product> products;
+	private List<Deal> deals;
 	private static final long serialVersionUID = 1L;
 
 	public Provider() {
@@ -62,4 +64,22 @@ public class Provider implements Serializable {
 		this.products = products;
 	}
 
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	@OneToMany(mappedBy = "provider")
+	public List<Deal> getDeals() {
+		return deals;
+	}
+
+	public void setDeals(List<Deal> deals) {
+		this.deals = deals;
+	}
+
+	
 }

@@ -45,8 +45,6 @@ import java.awt.event.KeyEvent;
 public class ListAccount extends JFrame {
 
 	private JPanel contentPane;
-	
-	private JTable table;
     private List<Account> listA ;
     Context context ;
 	DelegateAccount d = new DelegateAccount();
@@ -63,6 +61,8 @@ public class ListAccount extends JFrame {
 	static Date dateOfBirth ;
     static String mail ;
 	static String state ;
+	private JTable table;
+	private JTable table_1;
 	
 	
 	
@@ -132,26 +132,13 @@ public class ListAccount extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		table = new JTable();
-		table.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				
-				ac = listA.get(table.getSelectedRow());
-				ac2 = listA.get(table.getSelectedRow());
-				
-			}
-		});
-		table.setBounds(70, 73, 669, 285);
-		contentPane.add(table);
-		
 		JButton btnNewButton_1 = new JButton("Unban user");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-					int row = table.getSelectedRow();
+					int row = table_1.getSelectedRow();
 			       
-					int id = Integer.parseInt(table.getModel().getValueAt(row, 0).toString());
+					int id = Integer.parseInt(table_1.getModel().getValueAt(row, 0).toString());
 					System.out.println(id);
 				d.UnBann(id);
 					
@@ -235,14 +222,22 @@ public class ListAccount extends JFrame {
 		textField.setBounds(228, 11, 86, 20);
 		contentPane.add(textField);
 		textField.setColumns(10);
+		
+		table = new JTable();
+		table.setBounds(197, 134, 1, 1);
+		contentPane.add(table);
+		
+		table_1 = new JTable();
+		table_1.setBounds(10, 60, 651, 280);
+		contentPane.add(table_1);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 				
 				
 				
-					int row = table.getSelectedRow();
-					int id = Integer.parseInt(table.getModel().getValueAt(row, 0).toString());
+					int row = table_1.getSelectedRow();
+					int id = Integer.parseInt(table_1.getModel().getValueAt(row, 0).toString());
 					System.out.println(id);
 					
 					d.Bann(id);
@@ -258,37 +253,40 @@ public class ListAccount extends JFrame {
 		initDataBindings();
 	}
 	protected void initDataBindings() {
-		org.jdesktop.swingbinding.JTableBinding<tn.youbay.entities.Account, java.util.List<tn.youbay.entities.Account>, javax.swing.JTable> jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, listA, table);
+		JTableBinding<Account, List<Account>, JTable> jTableBinding = SwingBindings.createJTableBinding(UpdateStrategy.READ, listA, table_1);
 		//
-		org.jdesktop.beansbinding.BeanProperty<tn.youbay.entities.Account, java.lang.String> accountBeanProperty = org.jdesktop.beansbinding.BeanProperty.create("username");
-		jTableBinding.addColumnBinding(accountBeanProperty).setColumnName("Username");
+		BeanProperty<Account, Integer> accountBeanProperty = BeanProperty.create("id");
+		jTableBinding.addColumnBinding(accountBeanProperty).setColumnName("New Column");
 		//
-		org.jdesktop.beansbinding.BeanProperty<tn.youbay.entities.Account, java.lang.String> accountBeanProperty_1 = org.jdesktop.beansbinding.BeanProperty.create("codeBank");
-		jTableBinding.addColumnBinding(accountBeanProperty_1).setColumnName("Code bank");
+		BeanProperty<Account, String> accountBeanProperty_1 = BeanProperty.create("address");
+		jTableBinding.addColumnBinding(accountBeanProperty_1).setColumnName("New Column");
 		//
-		org.jdesktop.beansbinding.BeanProperty<tn.youbay.entities.Account, java.sql.Date> accountBeanProperty_2 = org.jdesktop.beansbinding.BeanProperty.create("dateCreation");
-		jTableBinding.addColumnBinding(accountBeanProperty_2).setColumnName("Date of creation");
+		BeanProperty<Account, String> accountBeanProperty_2 = BeanProperty.create("code_bank");
+		jTableBinding.addColumnBinding(accountBeanProperty_2).setColumnName("New Column");
 		//
-		org.jdesktop.beansbinding.BeanProperty<tn.youbay.entities.Account, java.sql.Date> accountBeanProperty_3 = org.jdesktop.beansbinding.BeanProperty.create("dateOfBirth");
-		jTableBinding.addColumnBinding(accountBeanProperty_3).setColumnName("Date of birth");
+		BeanProperty<Account, java.util.Date> accountBeanProperty_3 = BeanProperty.create("date");
+		jTableBinding.addColumnBinding(accountBeanProperty_3).setColumnName("New Column");
 		//
-		org.jdesktop.beansbinding.BeanProperty<tn.youbay.entities.Account, java.lang.String> accountBeanProperty_4 = org.jdesktop.beansbinding.BeanProperty.create("firstName");
-		jTableBinding.addColumnBinding(accountBeanProperty_4).setColumnName("First name");
+		BeanProperty<Account, java.util.Date> accountBeanProperty_4 = BeanProperty.create("dateofBirth");
+		jTableBinding.addColumnBinding(accountBeanProperty_4).setColumnName("New Column");
 		//
-		org.jdesktop.beansbinding.BeanProperty<tn.youbay.entities.Account, java.lang.String> accountBeanProperty_5 = org.jdesktop.beansbinding.BeanProperty.create("adresse");
-		jTableBinding.addColumnBinding(accountBeanProperty_5).setColumnName("Adresse");
+		BeanProperty<Account, String> accountBeanProperty_5 = BeanProperty.create("email");
+		jTableBinding.addColumnBinding(accountBeanProperty_5).setColumnName("New Column");
 		//
-		org.jdesktop.beansbinding.BeanProperty<tn.youbay.entities.Account, java.lang.String> accountBeanProperty_6 = org.jdesktop.beansbinding.BeanProperty.create("lastName");
-		jTableBinding.addColumnBinding(accountBeanProperty_6).setColumnName("Last name");
+		BeanProperty<Account, String> accountBeanProperty_6 = BeanProperty.create("firstName");
+		jTableBinding.addColumnBinding(accountBeanProperty_6).setColumnName("New Column");
 		//
-		org.jdesktop.beansbinding.BeanProperty<tn.youbay.entities.Account, java.lang.String> accountBeanProperty_7 = org.jdesktop.beansbinding.BeanProperty.create("secretNumber");
-		jTableBinding.addColumnBinding(accountBeanProperty_7).setColumnName("Secret number");
+		BeanProperty<Account, String> accountBeanProperty_7 = BeanProperty.create("lastName");
+		jTableBinding.addColumnBinding(accountBeanProperty_7).setColumnName("New Column");
 		//
-		org.jdesktop.beansbinding.BeanProperty<tn.youbay.entities.Account, java.lang.String> accountBeanProperty_8 = org.jdesktop.beansbinding.BeanProperty.create("state");
-		jTableBinding.addColumnBinding(accountBeanProperty_8).setColumnName("state");
+		BeanProperty<Account, String> accountBeanProperty_8 = BeanProperty.create("secret_number");
+		jTableBinding.addColumnBinding(accountBeanProperty_8).setColumnName("New Column");
 		//
-		org.jdesktop.beansbinding.BeanProperty<tn.youbay.entities.Account, java.lang.String> accountBeanProperty_9 = org.jdesktop.beansbinding.BeanProperty.create("mail");
-		jTableBinding.addColumnBinding(accountBeanProperty_9).setColumnName("Mail");
+		BeanProperty<Account, String> accountBeanProperty_9 = BeanProperty.create("state");
+		jTableBinding.addColumnBinding(accountBeanProperty_9).setColumnName("New Column");
+		//
+		BeanProperty<Account, String> accountBeanProperty_10 = BeanProperty.create("username");
+		jTableBinding.addColumnBinding(accountBeanProperty_10).setColumnName("New Column");
 		//
 		jTableBinding.bind();
 	}
