@@ -30,8 +30,10 @@ import tn.youbay.entities.TypeDeal;
 import org.jdesktop.beansbinding.ObjectProperty;
 
 import tn.youbay.entities.Product;
+
 import javax.swing.JComboBox;
 import javax.swing.JButton;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -98,7 +100,9 @@ public class SuccessfullDeals extends JFrame {
 		btnEnvoyerMail = new JButton("Envoyer mail");
 		btnEnvoyerMail.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				delegateDeal.mail();
+				int selectedRow = table_1.getSelectedRow();
+				String[] to ={table_1.getModel().getValueAt(selectedRow, 7).toString()};
+				delegateDeal.mail(to);
 				System.out.println("mail envoyé avec succés");
 			}
 		});
@@ -129,6 +133,9 @@ public class SuccessfullDeals extends JFrame {
 		//
 		BeanProperty<Deal, Integer> dealBeanProperty_6 = BeanProperty.create("noteClient");
 		jTableBinding.addColumnBinding(dealBeanProperty_6).setColumnName("New Column");
+		//
+		BeanProperty<Deal, String> dealBeanProperty_7 = BeanProperty.create("provider.email");
+		jTableBinding.addColumnBinding(dealBeanProperty_7).setColumnName("New Column");
 		//
 		jTableBinding.bind();
 	}

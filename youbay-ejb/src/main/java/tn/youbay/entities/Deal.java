@@ -30,6 +30,7 @@ public class Deal implements Serializable {
 	private Date deadline;
 	private float discount;
 	private int noteClient;
+	private Provider provider;
 
 	private List<ClientD> clients;
 
@@ -142,6 +143,15 @@ public class Deal implements Serializable {
 
 	public void setProduct(Product product) {
 		this.product = product;
+	}
+
+	@ManyToOne(cascade=CascadeType.MERGE)
+	public Provider getProvider() {
+		return provider;
+	}
+
+	public void setProvider(Provider provider) {
+		this.provider = provider;
 	}
 
 }
